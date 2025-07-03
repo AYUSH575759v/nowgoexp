@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Brittany';
+  src: url('fonts/BrittanySignature.ttf') format('truetype');
+}
+
+:root {
+  --black: #000000;
+  --light-gray: #F2F2F2;
+  --beige: #EAE4D5;
+  --accent: #a6816a;
+  --error: #e74c3c;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --font-primary: 'Montserrat', sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--black);
+  overflow: hidden;
+}
+
+/* Login Container */
+.login-container {
+  background-color: var(--beige);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.login-container h1 {
+  font-family: 'Brittany', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--black);
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Button */
+button {
+  background-color: var(--black);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Error Message */
+#errorMsg {
+  color: var(--error);
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+
+  .login-container h1 {
+    font-size: 2rem;
+  }
+}

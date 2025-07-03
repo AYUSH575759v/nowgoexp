@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'Brittany';
+  src: url('fonts/BrittanySignature.ttf') format('truetype');
+}
+
+:root {
+  --black: #000000;
+  --light-gray: #F2F2F2;
+  --beige: #EAE4D5;
+  --accent: #a6816a;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --font-primary: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--light-gray);
+  color: var(--black);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.payment-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+header {
+  text-align: center;
+  background-color: var(--beige);
+  padding: 2.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-family: 'Brittany', cursive;
+  font-size: 3rem;
+  color: var(--black);
+  font-weight: 600;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+/* Payment Options */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.payment-method {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-method:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.payment-method h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.payment-method p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.payment-method button {
+  background-color: var(--black);
+  color: white;
+  padding: 0.9rem 2.2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.payment-method button:hover {
+  background-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* Divider Text */
+.divider {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  .payment-method h2 {
+    font-size: 1.5rem;
+  }
+
+  .payment-method p {
+    font-size: 1rem;
+  }
+
+  .payment-method button {
+    padding: 0.8rem 2rem;
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,250 @@
+@font-face {
+  font-family: 'Brittany';
+  src: url('fonts/BrittanySignature.ttf') format('truetype');
+}
+
+:root {
+  --black: #000000;
+  --light-gray: #F2F2F2;
+  --beige: #EAE4D5;
+  --accent: #a6816a;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  --font-primary: 'Montserrat', sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--light-gray);
+  color: var(--black);
+  line-height: 1.75;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Header Section */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--beige);
+  padding: 2.5rem 1rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow);
+}
+
+.header-content {
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Brittany', cursive;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: var(--black);
+  color: white;
+  padding: 1rem 2.4rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  margin: 0.8rem 1rem;
+  border: none;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* CTA Section */
+.cta {
+  background-color: var(--beige);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+section p,
+section li {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--black);
+}
+
+/* How it Works */
+.how-it-works {
+  background-color: var(--beige);
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.step h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Features */
+.features {
+  background-color: var(--light-gray);
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features li {
+  margin: 1rem 0;
+  font-weight: 500;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.features li::before {
+  content: '•';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Pricing */
+.pricing {
+  background-color: var(--beige);
+}
+
+.pricing p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0.6rem 0;
+}
+
+/* Footer */
+footer {
+  background: var(--black);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Google Sign-In */
+#g_id_onload,
+.g_id_signin {
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: auto;
+    padding: 0.9rem 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 2.3rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+
+  .step h3 {
+    font-size: 1.3rem;
+  }
+
+  .pricing p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Scroll Animation */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-show {
+  opacity: 1;
+  transform: translateX(0);
+}

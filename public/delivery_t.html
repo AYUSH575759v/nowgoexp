@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Box Delivery - Book a Delivery</title>
+  <link rel="stylesheet" href="delivery_t.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>nowGo</h1>
+   
+
+  </header>
+  <main class="form-section">
+    <form class="delivery-form" onsubmit="return submitDelivery(event)">
+      <input type="text" name="pickup_line0" placeholder="Name" required>
+
+      <h3>Pickup Address</h3>
+      <input type="text" name="pickup_line1" placeholder="Address Line 1" required>
+      <input type="text" name="pickup_line2" placeholder="Street / Line 2" required>
+      <input type="text" name="pickup_block" placeholder="Block No" required>
+      <input type="text" name="pickup_wing" placeholder="Wing" required>
+      <input type="text" name="pickup_contact" placeholder="Contact Number" required>
+
+      <h3>Drop Address</h3>
+      <input type="text" name="drop_line1" placeholder="Address Line 1" required>
+      <input type="text" name="drop_line2" placeholder="Street / Line 2" required>
+      <input type="text" name="drop_block" placeholder="Block No" required>
+      <input type="text" name="drop_wing" placeholder="Wing" required>
+      <input type="text" name="drop_contact" placeholder="Contact Number" required>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Contact us: +91 92268 30556</p>
+  </footer>
+
+</body>
+</html>

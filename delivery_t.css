@@ -1,0 +1,191 @@
+@font-face {
+  font-family: 'Brittany';
+  src: url('fonts/BrittanySignature.ttf') format('truetype');
+}
+
+:root {
+  --black: #000000;
+  --light-gray: #F2F2F2;
+  --beige: #EAE4D5;
+  --accent: #a6816a;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --font-primary: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--light-gray);
+  color: var(--black);
+  line-height: 1.75;
+  font-size: 16px;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* Header Section */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--beige);
+  padding: 2.5rem 1rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Brittany', cursive;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Buttons */
+.btn, .delivery-form button {
+  display: inline-block;
+  background-color: var(--black);
+  color: white;
+  padding: 1rem 2.4rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  margin: 0.8rem 1rem;
+  border: none;
+}
+
+.btn:hover, .delivery-form button:hover {
+  background-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* Form Section */
+main.form-section {
+  background: white;
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.delivery-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.delivery-form fieldset {
+  border: 2px solid var(--accent);
+  padding: 1.5rem 2rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  background: var(--beige);
+}
+
+.delivery-form legend {
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 0 0.5rem;
+  color: var(--black);
+}
+
+.delivery-form label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--accent);
+}
+
+.delivery-form input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.3s;
+  width: 100%;
+  font-family: inherit;
+  color: var(--black);
+}
+
+.delivery-form input:focus {
+  outline: none;
+  border-color: var(--black);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+/* Footer */
+footer {
+  background: var(--black);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  max-width: 480px;
+  margin: 0 auto 2rem;
+}
+
+/* Scroll Animation */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .btn, .delivery-form button {
+    width: auto;
+    padding: 0.9rem 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 2.3rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .btn, .delivery-form button {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+}

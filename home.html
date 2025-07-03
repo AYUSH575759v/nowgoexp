@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Box Delivery</title>
+  <link rel="stylesheet" href="home_t.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Profile icon and login status -->
+  <div id="profile-icon" style="position: absolute; top: 20px; left: 30px;"></div>
+  <div id="login-status" style="position: absolute; top: 80px; left: 30px; font-family: 'Montserrat'; font-weight: 600;"></div>
+
+  <!-- Login button -->
+  <div id="login-button" style="position: absolute; top: 20px; right: 30px;">
+    <a href="index.html" style="
+      padding: 10px 20px;
+      background-color:#000000;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#e6762c'" onmouseout="this.style.backgroundColor='#FF8C42'">
+      Login
+    </a>
+  </div>
+
+  <header>
+    <div class="header-content">
+      <h1>nowGo</h1>
+      <p>Fast & Affordable Delivery in Badlapur</p>
+    </div>
+  </header>
+
+  <section class="cta">
+    <a href="delivery_t.html" class="btn">Book a Delivery</a>
+    <a href="delivey_t.html" class="btn">Track Your Box</a>
+  </section>
+
+  <section class="how-it-works scroll-hidden">
+    <h2>How We Work</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Schedule Pickup</h3>
+        <p>Tell us where to pick it up — home, shop, or friend's place.</p>
+      </div>
+      <div class="step">
+        <h3>2. We Pick It Up</h3>
+        <p>Our rider will reach within 15-20 minutes — no delays.</p>
+      </div>
+      <div class="step">
+        <h3>3. We Deliver</h3>
+        <p>Your item is delivered as fast as possible</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features scroll-hidden">
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li>Reliable and secure delivery</li>
+      <li>We deliver anything that fits in a box</li>
+      <li>Affordable pricing — no surprises</li>
+      <li>Real-time tracking (will be available soon)</li>
+    </ul>
+  </section>
+
+  <section class="pricing scroll-hidden">
+    <h2>Pricing</h2>
+    <p><strong>₹49</strong> – Delivery within 5 km</p>
+    <p><strong>₹79</strong> – Anywhere in Badlapur</p>
+    <p><em><strong>₹10</strong> – extra while raining</em></p>
+
+
+  </section>
+
+ <footer>
+  <p>Contact us: <strong>+91 92268 30556</strong></p>
+  <p>Instagram: <a href="https://www.instagram.com/nowgo_exp" target="_blank">@nowgo_exp</a></p>
+  <p>&copy; 2025 Box Delivery</p>
+</footer>
+
+  <!-- Google Sign-In Handler -->
+ <script>
+  function handleCredentialResponse(response) {
+    try {
+      const data = jwt_decode(response.credential);
+
+      // Set user image in profile-icon container
+      const profileIcon = document.getElementById("profile-icon");
+      if (profileIcon) {
+        profileIcon.innerHTML = `
+          <img 
+            src="${data.picture}" 
+            alt="User Image" 
+            title="${data.name}" 
+            style="border-radius: 50%; width: 50px; height: 50px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);" 
+          />
+        `;
+      }
+
+      // Update login status
+      const loginStatus = document.getElementById("login-status");
+      if (loginStatus) {
+        loginStatus.innerHTML = `Logged in as <strong>${data.name}</strong>`;
+      }
+
+      // Remove login button if exists
+      const loginBtn = document.getElementById("login-button");
+      if (loginBtn) loginBtn.remove();
+
+      // Hide Google Sign-In button
+      const gSignIn = document.querySelector('.g_id_signin');
+      if (gSignIn) gSignIn.style.display = 'none';
+
+    } catch (err) {
+      console.error("Error decoding credentials:", err);
+    }
+  }
+</script>
+
+  <!-- Optional Google Sign-In Button for Testing -->
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-shape="rectangular"
+       data-logo_alignment="left"
+       data-callback="handleCredentialResponse"
+       style="margin-top: 100px; text-align: center;">
+  </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const scrollElements = document.querySelectorAll('.scroll-hidden');
+    function checkScroll() {
+      scrollElements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const visibleHeight = window.innerHeight * 0.85;
+        if (top < visibleHeight) {
+          el.classList.add('scroll-show');
+        } else {
+          el.classList.remove('scroll-show');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+  </script>
+
+</body>
+</html>
